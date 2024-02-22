@@ -7,6 +7,8 @@ midi_out = 'FL STUDIO FIRE';    //set correct midi out device name
 
 var output = new easymidi.Output(midi_out);
 
+output.send('cc', { controller: 127, value: 0, channel: 0 });//off all led
+
 var dmxnet = new dmxlib.dmxnet(
     {
         //log: { level: 'info' }, // Winston logger options
